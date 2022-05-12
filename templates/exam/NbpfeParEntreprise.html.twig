@@ -1,0 +1,17 @@
+{% extends 'template.html.twig' %}
+{% block title %}Pfe list{% endblock %}
+{% block PageTitle %}
+    Nombres de Pfe par entreprises:
+{% endblock %}
+{% block body %}
+    <div class="row">
+        {% for entreprise in PfeparEntreprise %}
+            <div class="card text-white bg-{%if(loop.index is odd)%}primary{% else %}success{% endif %} m-2 col-3" style="max-width: 18rem;">
+                <div class="card-header">{{ entreprise['Designation'] }}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ entreprise[1] }} Pfe(s)</h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
